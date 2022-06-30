@@ -1,7 +1,7 @@
 import React from 'react';
 import { TipButton } from '../Buttons/TipButton.jsx';
 
-export const SelectTipContainer = props => {
+export const SelectTipContainer = ({ setTipButton }) => {
 
 	// Generating tip buttons
 	const getTipButton = () => {
@@ -15,6 +15,7 @@ export const SelectTipContainer = props => {
 
 		return tipAmount.map((tip, index) => {
 			return <TipButton
+				setTipButton={setTipButton}
 				value={tip.value}
 				key={index}
 				content={tip.content}

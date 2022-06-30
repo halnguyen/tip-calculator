@@ -1,13 +1,13 @@
 import React from 'react';
 import { OutputField } from '../OutputField/OutputField.jsx';
 
-export const OutputContainer = props => {
+export const OutputContainer = ({ tipTotal, tipAverage, onResetClick }) => {
 	return (
-		<>
-			<OutputField outputLabel="Tip Amount" outputAmount={45}/>
-			<OutputField outputLabel="Total" outputAmount={12} />
-			<button style={styles.button}>Reset</button>
-		</>
+			<section className="output">
+				<OutputField outputLabel="Tip Amount" outputAmount={tipTotal}/>
+				<OutputField outputLabel="Total" outputAmount={tipAverage} />
+				<button style={styles.button} onClick={onResetClick}>Reset</button>
+			</section>
 	);
 };
 

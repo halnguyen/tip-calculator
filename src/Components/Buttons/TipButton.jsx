@@ -1,9 +1,20 @@
 import React from 'react';
 
-export const TipButton = props => {
+export const TipButton = ({
+	setTipButton,
+	value,
+	key,
+	content
+}) => {
 	return (
 		<>
-			<button style={styles} value={props.value}>{props.content}</button>
+			<button
+				onClick={setTipButton}
+				style={styles}
+				value={value}
+			>
+				{content}
+			</button>
 		</>
 	);
 };
