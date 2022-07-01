@@ -5,11 +5,10 @@ export const InputField = props => {
 
 	return (
 		<>
-			<form className={props.type} action="" style={styles.form}>
+			<form className={props.type} action="" >
 				<label htmlFor={props.type}>{props.label}</label>
 				<input
 					id={props.type}
-					style={styles.input}
 					className={props.type}
 					type="number"
 					min={0}

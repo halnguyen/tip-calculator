@@ -1,5 +1,6 @@
 import React from 'react';
 import { TipButton } from '../Buttons/TipButton.jsx';
+import { CustomButton } from '../Buttons/CustomButton.jsx';
 
 export const SelectTipContainer = ({ setTipButton }) => {
 
@@ -17,7 +18,7 @@ export const SelectTipContainer = ({ setTipButton }) => {
 			return <TipButton
 				setTipButton={setTipButton}
 				value={tip.value}
-				key={index}
+				id={index}
 				content={tip.content}
 			/>;
 		})
@@ -28,6 +29,7 @@ export const SelectTipContainer = ({ setTipButton }) => {
 			<p>Select Tip %</p>
 			<div className="tip-button">
 				{getTipButton()}
+				<CustomButton />
 			</div>
 		</div>
 	);

@@ -32,17 +32,20 @@ function App() {
         <h1>spli</h1>
         <h1>tter</h1>
       </div>
-      <InputContainer
-        setTipButton={handleTipButton}
-        setTipPercentage={setTipPercentage}
-        setPerson={setPerson}
-        className="container--input"
-      />
-      <OutputContainer
-        tipTotal={tipTotal}
-        tipAverage={tipAverage}
-        onResetClick={handleReset}
-      />
+      <main>
+        <InputContainer
+          setTipButton={handleTipButton}
+          setTipPercentage={setTipPercentage}
+          setPerson={setPerson}
+          className="container--input"
+        />
+        <OutputContainer
+          tipTotal={tipTotal}
+          tipAverage={tipAverage}
+          onResetClick={handleReset}
+          className="container--output"
+        />
+      </main>
     </div>
   );
 }

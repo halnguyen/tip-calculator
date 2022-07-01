@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+// Variables
+$strongCyan: hsl(172, 67%, 45%);
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkGrayishCyan: hsl(186, 14%, 43%);
+$grayishCyan: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$veryLightGrayishCyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+#root {
+	height: 100vh;
+	width: 100vw;
+	overflow: scroll;
+	display: grid;
+	place-items: center;
+	font-family: 'Space Mono';
+	font-weight: 700;
+	display: grid;
+	place-items: center;
+	background-color: $lightGrayishCyan;
+}
+
+
+.App {
+	display: grid;
+	place-items: center;
+
+	.logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		text-transform: uppercase;
+		letter-spacing: 6px;
+		line-height: 1.4;
+		color: $veryDarkCyan;
+	}
+}
+
+main {
+	background-color: $white;
+	padding: 1.4em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	grid-gap: 10px;
+
+	.container--input {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		align-content: center;
+		gap: 1em;
+
+		form {
+			display: flex;
+			flex-flow: column nowrap;
+
+			label {
+				color: $darkGrayishCyan;
+				margin-bottom: 5px;
+			}
+
+			input {
+				border: none;
+				background-color: $veryLightGrayishCyan;
+				border-radius: 4px;
+				text-align: right;
+				font-family: inherit;
+				font-weight: 700;
+				font-size: 1.5em;
+				padding-right: 10px;
+				color: $veryDarkCyan;
+			}
+		}
+
+		.tip-button {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 0.5em;
+			// overflow: hidden;
+
+			button {
+				padding: 5px;
+				font-size: 1.2em;
+				border-radius: 4px;
+				outline: none;
+				border: none;
+				cursor: pointer;
+				font-family: inherit;
+				background-color: $veryDarkCyan;
+				color: $veryLightGrayishCyan;
+			}
+
+
+			.custom-button {
+				background-color: $veryLightGrayishCyan;
+				color: $darkGrayishCyan;
+				width: 100%;
+				border: none;
+				border-radius: 4px;
+				outline: none;
+				text-align: center;
+				padding: 0;
+				font-size: 1.4em;
+				font-family: inherit;
+				font-weight: inherit;
+
+				&:focus {
+					color: $veryDarkCyan;
+				}
+			}
+		};
+
+	}
+
+	.container--output {
+		background-color: $veryDarkCyan;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		color: $lightGrayishCyan;
+		height: 100%;
+
+		.output-field {
+			padding: 1.7em;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			flex-grow: 1;
+
+			.output-content {
+				display: flex;
+				justify-content: space-between;
+				line-height: 1.5;
+
+				.output--label {
+					display: flex;
+					flex-direction: column;
+
+					span {
+						color: $grayishCyan;
+						font-size: 0.8em;
+					}
+				}
+
+				.output--amount {
+					color: $strongCyan;
+					font-size: 1.8em;
+				}
+
+			}
+		}
+
+		button {
+			outline: none;
+			border: none;
+			border-radius: 5px;
+			padding: 0.5em 0;
+			margin: 1em;
+			background-color: $strongCyan;
+			font-family: inherit;
+			font-weight: inherit;
+			font-size: 1.4em;
+			color: $veryDarkCyan;
+		}
+
+	}
+}
+
+@media only screen and (max-width: 375px) {
+
+	.App {
+		width: 100%;
+		height: 100vh;
+
+		.logo {
+			height: 15vh;
+		}
+
+		main {
+			height: 85vh;
+			border-radius: 15px 15px 0 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-flow: column nowrap;
+
+			.container--input,
+			.container--output {
+				width: 100%;
+				height: 50%;
+				border-radius: 15px;
+			}
+
+			.container--input {
+				margin-bottom: 2em;
+			}
+
+		}
+
+	}
+
+}
+
+@media only screen and (min-width: 376px) {
+	main {
+		margin-top: 1em;
+		width: 100%;
+		max-width: 600px;
+		border-radius: 20px;
+
+		.container--input,
+		.container--output {
+			border-radius: 15px;
+		}
+
+		.container--input {
+			.tip-button {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+
+		}
+
+		.container--output {
+			margin-left: 1em;
+		}
+
+	}
+}

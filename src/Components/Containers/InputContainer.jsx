@@ -12,9 +12,19 @@ export const InputContainer = ({
 }) => {
 	return (
 		<div className={className}>
-			<section><InputField type="bill" label="Bill" /></section>
-			<section><SelectTipContainer setTipButton={setTipButton} /></section>
-			<section><InputField type="person" label="Number of People" /></section>
+
+			<section className="input--bill">
+				<InputField type="bill" label="Bill" />
+			</section>
+
+			<section className="input--tip">
+				<SelectTipContainer setTipButton={setTipButton} />
+			</section>
+
+			<section className="input--person">
+				<InputField type="person" label="Number of People" />
+			</section>
+
 		</div>
 	);
 };
