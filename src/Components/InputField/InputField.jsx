@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './InputField.css';
 
 export const InputField = ({
-	setBill, 
+	bill,
+	setBill,
 	setPerson,
-	inputType, 
+	inputType,
 	label,
 }) => {
 
@@ -16,6 +17,11 @@ export const InputField = ({
 			setPerson(() => Number(value));
 		}
 	};
+
+	let output;
+	useEffect(() => {
+		output = bill > 0 ? bill : undefined;
+	}, [bill]);
 
 	return (
 		<>

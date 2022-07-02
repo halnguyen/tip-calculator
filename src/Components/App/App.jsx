@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { InputContainer } from '../Containers/InputContainer.jsx';
 import { OutputContainer } from '../Containers/OutputContainer.jsx';
@@ -6,24 +6,14 @@ import { OutputContainer } from '../Containers/OutputContainer.jsx';
 function App() {
   const [bill, setBill] = useState(null);
   const [tipButton, setTipButton] = useState(null);
-  const [tipPercentage, setTipPercentage] = useState(0);
+  const [tipPercentage, setTipPercentage] = useState(null);
   const [person, setPerson] = useState(1);
-  const [tipTotal, setTipTotal] = useState(0);
-  const [tipAverage, setTipAverage] = useState(null);
 
   const handleReset = (event) => {
     setBill(prevBill => prevBill = 0);
     setTipButton(null);
     setTipPercentage(prevPercent => prevPercent = 0);
-    setPerson(prevPerson => prevPerson = 1);
-    setTipTotal(prevAmount => prevAmount = 0);
   };
-
-  useEffect(() => {
-    console.log("Bill is " + typeof bill);
-    console.log("Person is " + typeof person);
-    console.log("Percentage " + tipPercentage);
-  }, [bill, person, tipPercentage]);
 
   return (
     <div className="App">
@@ -35,14 +25,16 @@ function App() {
         <InputContainer
           tipButton={tipButton}
           setTipButton={setTipButton}
+          bill={bill}
           setBill={setBill}
           setPerson={setPerson}
           setTipPercentage={setTipPercentage}
           className="container--input"
         />
         <OutputContainer
-          tipTotal={tipTotal}
-          tipAverage={tipAverage}
+          bill={bill}
+          tipPercentage={tipPercentage}
+          person={person}
           onResetClick={handleReset}
           className="container--output"
         />

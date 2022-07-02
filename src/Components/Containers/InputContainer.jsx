@@ -7,6 +7,7 @@ import { OutputContainer } from './OutputContainer.jsx';
 export const InputContainer = ({
 	tipButton,
 	setTipButton,
+	bill,
 	setBill,
 	setPerson,
 	setTipPercentage,
@@ -18,6 +19,7 @@ export const InputContainer = ({
 			<section className="input--bill">
 				<InputField
 					setPerson={setPerson}
+					bill={bill}
 					setBill={setBill}
 					inputType="bill"
 					label="Bill"
