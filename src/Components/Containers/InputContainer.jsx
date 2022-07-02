@@ -8,21 +8,36 @@ export const InputContainer = ({
 	tipButton,
 	setTipButton,
 	setBill,
+	setPerson,
+	setTipPercentage,
 	className
 }) => {
 	return (
 		<div className={className}>
 
 			<section className="input--bill">
-				<InputField setBill={setBill} type="bill" label="Bill" />
+				<InputField
+					setPerson={setPerson}
+					setBill={setBill}
+					inputType="bill"
+					label="Bill"
+				/>
 			</section>
 
 			<section className="input--tip">
-				<SelectTipContainer tipButton={tipButton} setTipButton={setTipButton} />
+				<SelectTipContainer
+					tipButton={tipButton}
+					setTipButton={setTipButton}
+					setTipPercentage={setTipPercentage}
+				/>
 			</section>
 
 			<section className="input--person">
-				<InputField type="person" label="Number of People" />
+				<InputField
+					setPerson={setPerson}
+					inputType="person"
+					label="Number of People"
+				/>
 			</section>
 
 		</div>

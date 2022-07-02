@@ -1,18 +1,21 @@
 import React from 'react';
 
-export const CustomButton = props => {
+export const CustomButton = ({
+	setTipPercentage,
+	setActiveButton
+}) => {
 
-	// const onFocus = event => {};
+	const handleInput = ({ target }) => {
+		setTipPercentage(() => Number(target.value) / 100);
+	};
 
-	// useEffect(() => {
-	// 	const button = document.querySelector(".custom-button");
-	// 	button.addEventListener(''
-	// });
+	const handleFocus = () => setActiveButton(() => null);
 
 	return (
 		<>
 			<input
-				onChange={(event) => {console.log(event.target.value)}}
+				onChange={handleInput}
+				onFocus={handleFocus}
 				className="custom-button"
 				type="number"
 				placeholder="Custom"

@@ -20,8 +20,10 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(typeof bill);
-  }, [bill]);
+    console.log("Bill is " + typeof bill);
+    console.log("Person is " + typeof person);
+    console.log("Percentage " + tipPercentage);
+  }, [bill, person, tipPercentage]);
 
   return (
     <div className="App">
@@ -34,6 +36,8 @@ function App() {
           tipButton={tipButton}
           setTipButton={setTipButton}
           setBill={setBill}
+          setPerson={setPerson}
+          setTipPercentage={setTipPercentage}
           className="container--input"
         />
         <OutputContainer

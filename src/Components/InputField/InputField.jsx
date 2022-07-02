@@ -3,25 +3,30 @@ import './InputField.css';
 
 export const InputField = ({
 	setBill, 
-	type, 
+	setPerson,
+	inputType, 
 	label,
 }) => {
 
-	const handleBill = ({ target }) => {
+	const handleInput = ({ target }) => {
 		const { value } = target;
-		setBill(() => Number(value));
+		if (inputType === "bill") {
+			setBill(() => Number(value));
+		} else {
+			setPerson(() => Number(value));
+		}
 	};
 
 	return (
 		<>
-			<form className={type} action="" >
-				<label htmlFor={type}>{label}</label>
+			<form className={inputType} action="" >
+				<label htmlFor={inputType}>{label}</label>
 				<input
-					id={type}
-					className={type}
+					id={inputType}
+					className={inputType}
 					type="number"
 					min={0}
-					onInput={handleBill}
+					onInput={handleInput}
 					required />
 			</form>
 		</>

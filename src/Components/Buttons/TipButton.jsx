@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const TipButton = ({ activeButton, setActiveButton }) => {
+export const TipButton = ({ 
+	activeButton, 
+	setActiveButton,
+	setTipPercentage
+}) => {
 
 	const getTipButton = () => {
 		const tipAmounts = [
@@ -13,6 +17,7 @@ export const TipButton = ({ activeButton, setActiveButton }) => {
 
 		const handleClick = ({target}) => {
 			setActiveButton(prevButton => prevButton = Number(target.value));
+			setTipPercentage(() => Number(target.value));
 		};
 
 		return tipAmounts.map((tip, index) => {
