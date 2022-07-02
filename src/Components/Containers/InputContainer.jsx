@@ -5,20 +5,20 @@ import { OutputContainer } from './OutputContainer.jsx';
 
 
 export const InputContainer = ({
+	tipButton,
 	setTipButton,
-	setTipPercentage,
-	setPerson,
+	setBill,
 	className
 }) => {
 	return (
 		<div className={className}>
 
 			<section className="input--bill">
-				<InputField type="bill" label="Bill" />
+				<InputField setBill={setBill} type="bill" label="Bill" />
 			</section>
 
 			<section className="input--tip">
-				<SelectTipContainer setTipButton={setTipButton} />
+				<SelectTipContainer tipButton={tipButton} setTipButton={setTipButton} />
 			</section>
 
 			<section className="input--person">

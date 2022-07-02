@@ -2,6 +2,7 @@
 
 // Variables
 $strongCyan: hsl(172, 67%, 45%);
+$lightStrongCyan: hsl( 172, 67%, 70% );
 $veryDarkCyan: hsl(183, 100%, 15%);
 $darkGrayishCyan: hsl(186, 14%, 43%);
 $grayishCyan: hsl(184, 14%, 56%);
@@ -94,6 +95,11 @@ main {
 				font-family: inherit;
 				background-color: $veryDarkCyan;
 				color: $veryLightGrayishCyan;
+
+				&:hover {
+					background-color: $lightStrongCyan;
+					color: $veryDarkCyan;
+				}
 			}
 
 
@@ -167,6 +173,11 @@ main {
 			font-weight: inherit;
 			font-size: 1.4em;
 			color: $veryDarkCyan;
+
+			&:hover {
+				background-color: $lightStrongCyan;
+				color: $veryDarkCyan;
+			}
 		}
 
 	}
@@ -231,4 +242,17 @@ main {
 		}
 
 	}
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	-moz-appearance: textfield;
 }

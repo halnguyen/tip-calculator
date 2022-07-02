@@ -1,17 +1,27 @@
 import React from 'react';
 import './InputField.css';
 
-export const InputField = props => {
+export const InputField = ({
+	setBill, 
+	type, 
+	label,
+}) => {
+
+	const handleBill = ({ target }) => {
+		const { value } = target;
+		setBill(() => Number(value));
+	};
 
 	return (
 		<>
-			<form className={props.type} action="" >
-				<label htmlFor={props.type}>{props.label}</label>
+			<form className={type} action="" >
+				<label htmlFor={type}>{label}</label>
 				<input
-					id={props.type}
-					className={props.type}
+					id={type}
+					className={type}
 					type="number"
 					min={0}
+					onInput={handleBill}
 					required />
 			</form>
 		</>

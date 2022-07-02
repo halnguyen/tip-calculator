@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { InputContainer } from '../Containers/InputContainer.jsx';
 import { OutputContainer } from '../Containers/OutputContainer.jsx';
@@ -19,12 +19,9 @@ function App() {
     setTipTotal(prevAmount => prevAmount = 0);
   };
 
-  const handleTipButton = (event) => {
-    // selsect/deselect button with class manipulation
-    // selected button will return the percentage
-    // do math, set state, etc..
-    return;
-  };
+  useEffect(() => {
+    console.log(typeof bill);
+  }, [bill]);
 
   return (
     <div className="App">
@@ -34,9 +31,9 @@ function App() {
       </div>
       <main>
         <InputContainer
-          setTipButton={handleTipButton}
-          setTipPercentage={setTipPercentage}
-          setPerson={setPerson}
+          tipButton={tipButton}
+          setTipButton={setTipButton}
+          setBill={setBill}
           className="container--input"
         />
         <OutputContainer

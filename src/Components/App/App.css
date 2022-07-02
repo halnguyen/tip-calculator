@@ -69,6 +69,9 @@ main {
         font-family: inherit;
         background-color: #00494d;
         color: #f4fafa; }
+        main .container--input .tip-button button:hover {
+          background-color: #7fe6d8;
+          color: #00494d; }
       main .container--input .tip-button .custom-button {
         background-color: #f4fafa;
         color: #5e7a7d;
@@ -120,6 +123,9 @@ main {
       font-weight: inherit;
       font-size: 1.4em;
       color: #00494d; }
+      main .container--output button:hover {
+        background-color: #7fe6d8;
+        color: #00494d; }
 
 @media only screen and (max-width: 375px) {
   .App {
@@ -155,3 +161,13 @@ main {
       grid-template-columns: 1fr 1fr 1fr; }
     main .container--output {
       margin-left: 1em; } }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield; }
